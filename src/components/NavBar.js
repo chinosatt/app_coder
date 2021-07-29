@@ -7,12 +7,11 @@ const NavBar = () =>
     <Navbar bg="dark" variant="dark">
         <Container>
             <CartWidget/>
-            
             <Nav className="me-auto">
-                <Nav.Link href="#CPU">CPU</Nav.Link>
-                <Nav.Link href="#RAM">RAM</Nav.Link>
-                <Nav.Link href="#Almacenamiento">Almacenamiento</Nav.Link>
-                <Nav.Link href="#Notebook">Notebook</Nav.Link>
+                <Nav.Link href="#Perifiericos">Periféricos</Nav.Link>
+                <Nav.Link href="#Ordenadores">Ordenadores</Nav.Link>
+                <Nav.Link href="#Componentes">Componentes PC</Nav.Link>
+                <Nav.Link href="#Gaming">Gaming</Nav.Link>
             </Nav>
         </Container>
     </Navbar>

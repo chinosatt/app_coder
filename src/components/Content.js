@@ -1,10 +1,15 @@
+import Container from 'react-bootstrap/Container'
 import ItemListContainer from "./ItemListContainer";
-import ItemCount from "./ItemCount";
 
-const Content = () =>
-        <content>
+const Content = () => {
+
+    return (
+        <Container>
             <ItemListContainer greeting="Productos Destacado"/>
-            <ItemCount stock = {5} initial = {1} />
-        </content>
+        </Container>
+    )
+    
+}
+        
 
 export default Content

@@ -14,12 +14,9 @@ const Header = ({nombre,edad,usuarios,children}) => {
                 <p>Hola {nombre}</p>
                 {children}
             */}
-            
-            
         </header>
     )
 
 }
-    
 
 export default Header

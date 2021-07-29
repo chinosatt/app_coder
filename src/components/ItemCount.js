@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
-const ItemCount = ({stock,initial}) => {
+const ItemCount = ({stock,initial,id}) => {
 
     const [contador, setContador] = useState(initial)
 
@@ -21,6 +21,7 @@ const ItemCount = ({stock,initial}) => {
 
     const addCart = () => {
         console.log(contador)
+        console.log(id)
     }
 
     return (
