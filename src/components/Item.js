@@ -14,9 +14,9 @@ const Item = ({id,title,price,pictureUrl}) => {
                 </Card.Link>
                 <Card.Body>
                     <Card.Link href={"#" + id}>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{title}</Card.Subtitle>
                     </Card.Link>
-                    <Card.Subtitle className="mb-2 text-muted">$ {price}</Card.Subtitle>
+                    <Card.Title>$ {price}</Card.Title>
                     <ItemCount stock={5} initial={1} id={id} onAdd={onAdd} />
                 </Card.Body>
             </Card>

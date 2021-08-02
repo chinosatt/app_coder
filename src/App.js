@@ -45,6 +45,26 @@ const App = () => {
         console.log("Terminó la promesa mal")
     }) */
 
+    /* Pomesa Fetch:
+    const pedido = fetch('https://jsonplaceholder.typicode.com/users')
+    // Transformacion
+    pedido.then((respuesta) => {
+        // respuesta.text()
+        // respuesta.blob()
+        return respuesta.json()    
+    }) // Respuesta
+    .then((transformacion) => {
+        console.log(transformacion)   
+    }) // Error
+    pedido.catch(() => {
+        console.log('Pedido Mal')
+    })
+    // Version corta
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => console.log(json))
+    */
+
     return (
         <>
             { /* <Header test test2 nombre = "Ezequiel" edad={40} usuarios={usuarios} >

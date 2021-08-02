@@ -1,10 +1,9 @@
 import Row from 'react-bootstrap/Row'
-import Spinner from 'react-bootstrap/Spinner'
-import React, {useEffect, useState} from "react"
 import Item from "./Item";
 
-const ItemList = () => {
+const ItemList = (productos) => {
 
+    /*
     const [productos, setProductos] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -37,7 +36,16 @@ const ItemList = () => {
             </Row>
         )
     }
+    */
+
+    console.log(productos);
     
+    return (
+        <Row xs={1} md={3} lg={4} >
+            { productos.map( producto => (<Item id={producto.id} title={producto.title} price={producto.price} pictureUrl={producto.pictureUrl} />) ) }
+        </Row>
+    )
+
 }
         
 export default ItemList
