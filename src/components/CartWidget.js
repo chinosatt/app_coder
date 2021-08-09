@@ -1,7 +1,8 @@
 import Navbar from 'react-bootstrap/Navbar'
+import {Link} from "react-router-dom" 
 
 const CartWidget = () =>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand as={Link} to="/">
         <img
             src="/image/logo.png"
             width="30"

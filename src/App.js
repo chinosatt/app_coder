@@ -1,5 +1,7 @@
 import React , {useState} from "react"
 
+import {BrowserRouter, Route} from "react-router-dom"
+
 import Header from "./components/Header"
 import Content from "./components/Content"
 
@@ -7,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import "./estilos.css"
 import Parrafo from "./components/Parrafo"
+
+
 
 const App = () => {
 
@@ -65,16 +69,30 @@ const App = () => {
     .then(json => console.log(json))
     */
 
+    /* Eventos
+    const hacerClick = (e) => {
+        console.log("Hola")
+        console.log(e)
+    }
+    */
+
     return (
         <>
             { /* <Header test test2 nombre = "Ezequiel" edad={40} usuarios={usuarios} >
                 <p>Esto es un subtítulo</p>
             </Header> */ }
-            <Header />
-            <Content />
-            
+
+            <BrowserRouter >
+                <Header />
+                <Content />
+            </BrowserRouter>
+
             { /* <Parrafo contador={contador} />
             <button onClick={aumentar}>sumar</button> */}
+
+            { /* Eventos  
+            <button onClick={hacerClick}> Click Me</button>
+            */ }
 
         </>
     )
