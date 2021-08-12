@@ -3,6 +3,7 @@ import {Route, Switch} from "react-router-dom"
 import Container from 'react-bootstrap/Container'
 import ItemListContainer from "./ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
+import Cart from "./Cart";
 
 const Content = () => {
 
@@ -15,9 +16,9 @@ const Content = () => {
             <Switch>
                 <Route path="/item/:id" component={ItemDetailContainer} />
                 <Route path="/categoria/:cat" component={ItemListContainer} />
+                <Route path="/cart" component={Cart} />
                 <Route path="/" component={ItemListContainer} exact />
             </Switch>
-            
 
             {/* Componente con props - no se envían los props de la libreria */}
             {/* <Route path="/">

@@ -1,9 +1,14 @@
+import { useContext } from 'react'
+import contexto from '../contexto'
+
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
 const Item = ({id,title,price,pictureUrl}) => {
+    
+    const resultado = useContext(contexto)
 
-    const onAdd = () => {}
+    console.log(resultado)
 
     return (
         <Col className='mt-3'>
@@ -18,6 +23,9 @@ const Item = ({id,title,price,pictureUrl}) => {
                     <Card.Title>$ {price}</Card.Title>
                 </Card.Body>
             </Card>
+
+            {/* <button onClick={resultado.cambiarNombre}>Cambiar Nombre</button> */}
+
         </Col>
     )
     

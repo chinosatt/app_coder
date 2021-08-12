@@ -9,8 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import "./estilos.css"
 import Parrafo from "./components/Parrafo"
-
-
+// import CustomProvider from "./components/CustomProvider"
 
 const App = () => {
 
@@ -81,12 +80,13 @@ const App = () => {
             { /* <Header test test2 nombre = "Ezequiel" edad={40} usuarios={usuarios} >
                 <p>Esto es un subtítulo</p>
             </Header> */ }
-
-            <BrowserRouter >
-                <Header />
-                <Content />
-            </BrowserRouter>
-
+            { /* <CustomProvider> */ }
+                <BrowserRouter >
+                    <Header />
+                    <Content />
+                </BrowserRouter>
+            { /* </CustomProvider> */ }
+            
             { /* <Parrafo contador={contador} />
             <button onClick={aumentar}>sumar</button> */}
 
