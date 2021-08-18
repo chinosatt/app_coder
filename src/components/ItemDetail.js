@@ -7,20 +7,28 @@ import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav'
 
 import ItemCount from "./ItemCount"
-import CartContext from './CartContext'
+import {contexto} from './CartContext'
 
 
 const ItemDetail = ({producto}) => {
     
-    const {addItem} = useContext(CartContext)
+    const CartContext = useContext(contexto)
+
+    // console.log(CartContext)
 
     const [terminarCompra, setTerminarCompra] = useState(false)
 
-    const onAdd = (contador, id) => {
-        
-        console.log(contador + ' - ' + id)
+    const onAdd = (contador) => {
 
-        addItem(id, contador)
+        const item = {
+            // ...producto, // - spread
+            item: producto,
+            quantity: contador
+        }
+
+        // console.log(item)
+
+        CartContext.addItem(item)
 
     }
 
@@ -38,7 +46,7 @@ const ItemDetail = ({producto}) => {
                     <Col><Nav.Link as={Link} to="/cart">Terminar Compra</Nav.Link></Col>
                 </Row>
             ) : (
-                <ItemCount stock={producto.stock} initial={producto.stock >= 1 ? 1 : 0} id={producto.id} onAdd={onAdd} />
+                <ItemCount stock={producto.stock} initial={producto.stock >= 1 ? 1 : 0} onAdd={onAdd} />
             )}
         </Row>
     )

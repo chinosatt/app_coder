@@ -1,9 +1,20 @@
+import { useContext } from "react"
+import {contexto} from './CartContext'
+
+
 const Cart = () => {
 
-    // Desglose de productos
+    const {cart, removeItem, clear} = useContext(contexto)
+
+    console.log(cart)
 
     return(
-        <div></div>
+        <div>
+            {cart.map(item => 
+                <div> { }</div>
+
+            )}
+        </div>
     )
 }
 
