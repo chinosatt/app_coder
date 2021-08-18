@@ -20,7 +20,7 @@ const ItemCount = ({stock,initial,id,onAdd}) => {
     }
 
     const addCart = () => {
-        onAdd(contador)
+        onAdd(contador, id)
     }
 
     return (

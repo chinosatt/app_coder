@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import contexto from '../contexto'
+import contexto from '../App'
 
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'

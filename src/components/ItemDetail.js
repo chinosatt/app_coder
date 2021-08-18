@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import {Link} from "react-router-dom" 
 
 import Col from 'react-bootstrap/Col'
@@ -6,18 +6,21 @@ import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav'
 
-import ItemCount from "./ItemCount";
+import ItemCount from "./ItemCount"
+import CartContext from './CartContext'
 
 
 const ItemDetail = ({producto}) => {
     
+    const {addItem} = useContext(CartContext)
+
     const [terminarCompra, setTerminarCompra] = useState(false)
 
-    const onAdd = (contador) => {
+    const onAdd = (contador, id) => {
         
-        console.log(contador)
-        
-        setTerminarCompra(true)
+        console.log(contador + ' - ' + id)
+
+        addItem(id, contador)
 
     }
 
