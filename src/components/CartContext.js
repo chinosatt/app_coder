@@ -8,53 +8,50 @@ const {Consumer,Provider} = contexto
 const CartContext = ({children}) => {
 
     const [cart, setCart] = useState([])
-    const [inCart, setInCart] = useState(false)
     
     const addItem = (item) => {
-        
-        // console.log(item)
-
-        console.log(isInCart(item.item.id))
-        
-        
-        if(isInCart(item.item.id)) {
-
-        } else {
-            setCart([...cart, item])
-        }
-        
-
-        // console.log(item)
-        /* Version larga
-        const cart_new = [...cart]
-        cart_new.push(item)
-        setCart(cart_new)
-        */
-        // Version corta
-        // setCart([...cart, item])
-        
+        const promesa = isInCart(item.item.id)
+        promesa.then(result => {
+            if(typeof result === 'undefined'){
+                // Version corta
+                setCart([...cart, item])
+                /* Version larga
+                const cart_new = [...cart]
+                cart_new.push(item)
+                setCart(cart_new)
+                */
+            } else {
+                const newCart = []
+                cart.forEach((list) => {
+                    if(list.item.id == item.item.id) {
+                        newCart.push({"item": {id: list.item.id, title: list.item.title, price: list.item.price, pictureUrl: list.item.pictureUrl, category: list.item.category, stock: list.item.stock}, "quantity" : list.quantity + item.quantity})
+                    } else {
+                        newCart.push(list)
+                    }   
+                })
+                setCart(newCart)
+            }
+        })
     }
+
     const removeItem = (itemId) => {
-        console.log(itemId)
-        const cart_new = [...cart]
-        cart_new.array.splice(producto => producto.item.id, itemId);
+        let cart_new = [...cart]
+        cart_new = cart_new.filter(function(items) {
+            return items.item.id !== itemId
+        })
         setCart(cart_new)
-
     }
+
     const clear = () => {
         setCart([])
     }
+
     const isInCart = (itemId) => {
-        
-        console.log(cart)
-
-        const result = cart.find(items => (items.item.id == itemId) ? setInCart(true) : setInCart(false))
-
-        // cart.find(producto => producto.item.id == itemId) ? setInCart(true) : setInCart(false)
-
-        return inCart;
-
-    }
+        const result = new Promise((res,rej) => {
+            res(cart.find(items => items.item.id == itemId))
+        })
+        return result
+    } 
     
     return(
         <Provider value={{cart,addItem,removeItem,clear}}>

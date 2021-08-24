@@ -30,6 +30,8 @@ const ItemDetail = ({producto}) => {
 
         CartContext.addItem(item)
 
+        setTerminarCompra(true)
+
     }
 
     return(
