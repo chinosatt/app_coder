@@ -1,5 +1,4 @@
 import { createContext, useState } from "react"
-// import { Provider } from "../contexts"
 
 export const contexto = createContext() 
 
@@ -13,13 +12,7 @@ const CartContext = ({children}) => {
         const promesa = isInCart(item.item.id)
         promesa.then(result => {
             if(typeof result === 'undefined'){
-                // Version corta
                 setCart([...cart, item])
-                /* Version larga
-                const cart_new = [...cart]
-                cart_new.push(item)
-                setCart(cart_new)
-                */
             } else {
                 const newCart = []
                 cart.forEach((list) => {

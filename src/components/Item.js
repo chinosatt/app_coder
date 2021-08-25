@@ -9,8 +9,6 @@ const Item = ({id,title,price,pictureUrl}) => {
     
     const resultado = useContext(contexto)
 
-    console.log(resultado)
-
     return (
         <Col className='mt-3'>
             <Card>
@@ -24,9 +22,6 @@ const Item = ({id,title,price,pictureUrl}) => {
                     <Card.Title>$ {price}</Card.Title>
                 </Card.Body>
             </Card>
-
-            {/* <button onClick={resultado.cambiarNombre}>Cambiar Nombre</button> */}
-
         </Col>
     )
     

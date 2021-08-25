@@ -1,22 +1,8 @@
 import NavBar from "./NavBar";
 
-const Header = ({nombre,edad,usuarios,children}) => {
-
-    // Destucturing
-    // const {nombre,edad} = prop
-    // const nombre = prop.nombre
-    // const edad = prop.edad
-    
-    return (
-        <header>
-            <NavBar/>
-            {/* Comentario dentro de JSX 
-                <p>Hola {nombre}</p>
-                {children}
-            */}
-        </header>
-    )
-
-}
+const Header = ({nombre,edad,usuarios,children}) => 
+    <header>
+        <NavBar/>
+    </header>
 
 export default Header

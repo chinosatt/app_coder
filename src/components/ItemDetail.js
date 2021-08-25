@@ -14,24 +14,15 @@ const ItemDetail = ({producto}) => {
     
     const CartContext = useContext(contexto)
 
-    // console.log(CartContext)
-
     const [terminarCompra, setTerminarCompra] = useState(false)
 
     const onAdd = (contador) => {
-
         const item = {
-            // ...producto, // - spread
             item: producto,
             quantity: contador
         }
-
-        // console.log(item)
-
         CartContext.addItem(item)
-
         setTerminarCompra(true)
-
     }
 
     return(
