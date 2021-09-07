@@ -20,7 +20,9 @@ const ItemDetailContainer = () => {
 
         query.then((resultado) => {
             const data = resultado.data()
-            setProducto(data)   
+            const id = resultado.id
+            const data_final = {id, ...data}
+            setProducto(data_final)   
             setIsLoaded(true)
         })
 
